@@ -1,0 +1,42 @@
+a) Objetivos:
+Desenvolver uma aplicação de controlo da temperatura e humidade para uma estufa
+Dependendo do ambiente presente na estufa abrir e persianas para permitir o ambiente ideal para o desenvolvimento dos produtos
+
+b) O nosso projeto é semelhante às funcionalidades de uma estufa inteligente no entanto, em vez de a nossa aplicação criar o ambiente, esta irá controlá-lo dependendo de
+fatores externos.
+
+c) Requisitos funcionais da solução
+-Aquisição de Dados
+O sistema deve ser capaz de coletar dados de temperatura e humidade em tempo real por meio dos sensores
+
+-Processamento de Dados
+Os dados coletados devem ser processados para calcular índice de desconforto humano
+
+-Determinação de Ações
+Com base no índice de desconforto calculado o sistema deve decidir se é necessário ativar os atoadores.
+
+-Interface do Utilizador
+Deve haver uma interface que permita ao utilizador visualizar os dados de temperatura e humidade em tempo real, bem como configurar as preferências de limite de temperatura/humidade
+
+-Alertas e Notificações
+O sistema deve ser capaz de enviar alertas ou notificações para o utilizador em caso de após as ações os níveis não se encontrarem nos desejados.
+
+
+d)Hardware necessário:
+Sensor medição de Temperatura 
+Sensor medição de Humidade
+2 pares de botões para aumentar e diminuir a temperatura
+2 pares de botões para aumentar e diminuir a humidade
+4 LEDs(Janela, Aquecedor, Ventoínha, Aspersores)
+Painel Solar(Bateria) dá também verificar se é de dia ou de noite
+Display da TTGo
+
+e) Parâmetros necessários:
+Temperatura
+Humidade
+Hora
+
+
+ 
+
+
