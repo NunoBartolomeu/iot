@@ -12,6 +12,7 @@ from Message import Message
 from Actuators import Actuators
 from boot import TEMP_LIMITS, HUMI_LIMITS
 
+
 display = Display()
 dht = DHT(Pin('G2', mode=Pin.OPEN_DRAIN),0)
 vcc = Pin('G13', mode=Pin.OUT)
