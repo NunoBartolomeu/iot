@@ -3,6 +3,7 @@ print("Running main")
 import sys
 sys.path.append('./src')
 
+import socket
 import time
 from machine import Pin, I2C, ADC # type: ignore
 from dht import DHT
@@ -18,6 +19,11 @@ dht = DHT(Pin('G2', mode=Pin.OPEN_DRAIN),0)
 vcc = Pin('G13', mode=Pin.OUT)
 vcc.value(1)
 logger = Logger("log.txt")
+# create a LoRa socket
+s = socket.socket(socket.AF_LORA, socket.SOCK_RAW)
+# set the LoRaWAN data rate
+s.setsockopt(socket.SOL_LORA, socket.SO_DR, 5)
+s.setblocking(True)
 
 SLEEP_TIME = 5
 
@@ -32,14 +38,14 @@ while True:
             SLEEP_TIME = 2
         else:
             SLEEP_TIME = 5
-
         display.showData(message)
         print(message)
         #logger.log(message)
     else:
         print("Error: %d" % result.error_code)
+    s.send(bytes([0x00, 0x00, 0x01]))
     time.sleep(SLEEP_TIME)
-
+    
 
 fan_pin = Pin('G14', mode=Pin.OUT)
 heater_pin = Pin('G25', mode=Pin.OUT)
