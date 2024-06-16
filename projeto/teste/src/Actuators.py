@@ -5,6 +5,12 @@ class Actuators:
         self.window_pin = window_pin
         self.sprinkler_pin = sprinkler_pin
     
+    def all_off(self):
+        self.fan_off()
+        self.heater_off()
+        self.window_off()
+        self.sprinkler_off()
+
     def fan_on(self):
         self.fan_pin.value(1)
         self.heater_off()

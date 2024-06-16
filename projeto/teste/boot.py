@@ -1,8 +1,5 @@
-print("System booting up...")
+print("Running boot")
 
-import sys
-sys.path.append('./src')
-from Limit import Limit
 import binascii
 from network import LoRa
 import time
@@ -15,17 +12,9 @@ app_eui = binascii.unhexlify('0000000000000000')
 lora.join(activation=LoRa.OTAA, auth=(dev_eui, app_eui, app_key), timeout=0)
 
 # wait until the module has joined the network
+print("Joining LoRa...")
 while not lora.has_joined():
-    time.sleep(2.5)
-    print('Not yet joined...')
+    time.sleep(2)
+print('Joined!')
 
-print('Joined')
-
-
-TEMP_LIMITS = Limit('T', 25, 20, 30)
-HUMI_LIMITS = Limit('H', 55, 50, 60)
-
-print(TEMP_LIMITS)
-print(HUMI_LIMITS)
-
-print("System booted up.")
+print("Boot Complete.")
